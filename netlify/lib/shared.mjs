@@ -24,7 +24,7 @@ export async function countClaims(store) {
   for (const b of blobs) {
     const r = await store.get(b.key, { type: "json" });
     if (!r) continue;
-    const live = r.status === "verified" || (r.status === "pending" && now - r.created < PENDING_HOLD_MS);
+    const live = r.status === "verified" || r.status === "approved" || (r.status === "pending" && now - r.created < PENDING_HOLD_MS);
     if (!live) continue;
     for (const p of r.attendees || []) if (p.bring && counts[p.bring] !== undefined) counts[p.bring]++;
   }
@@ -56,3 +56,16 @@ export const emailShell = (inner) => `
     ${inner}
   </div>
 </div>`;
+
+export const pageShell = (title, body) => new Response(`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>${title}</title>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>body{margin:0;min-height:100vh;background:linear-gradient(180deg,#14081fb3,#14081fe6),url(/background.jpg) 62% 30%/cover fixed;color:#f5ecff;font-family:Nunito,sans-serif;padding:16px}
+.wrap{max-width:640px;margin:24px auto}.card{background:#221035ee;border:1px solid #ffcf6b55;border-radius:20px;padding:22px;margin:14px 0;box-shadow:0 10px 30px #0006}
+h1{font-family:"Permanent Marker",cursive;font-weight:400;color:#ff8ad8;font-size:2.1rem;margin:0 0 8px}h2{font-family:"Permanent Marker",cursive;font-weight:400;color:#ffcf6b;font-size:1.4rem;margin:22px 0 6px}
+.addr{background:#14081f;border-radius:12px;padding:16px;font-size:1.2rem;font-weight:900;color:#ffcf6b;margin:14px 0}
+a{color:#b6ff5c}ul{padding-left:20px}li{margin:3px 0}.muted{color:#cbb6e6;font-size:.9rem}
+.btn{font:inherit;font-weight:900;border:0;border-radius:999px;padding:12px 20px;cursor:pointer;margin:8px 8px 0 0}.ok{background:linear-gradient(180deg,#ffb3e6,#ff6fd2);color:#2a0620}.no{background:#3a1d55;color:#f5ecff}
+input{font:inherit;width:100%;padding:12px;border-radius:12px;border:2px solid #4a2a6b;background:#14081f;color:#f5ecff;box-sizing:border-box}
+.pill{display:inline-block;font-size:.75rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:999px;background:#4a2a6b;margin-left:6px}
+.stats{display:flex;gap:8px;flex-wrap:wrap}.stats div{background:#14081f;border-radius:12px;padding:8px 12px;font-weight:800}</style></head>
+<body><div class="wrap">${body}</div></body></html>`, { headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" } });
