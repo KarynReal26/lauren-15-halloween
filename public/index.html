@@ -12,12 +12,12 @@
   :root{
     --night:#14081f; --plum:#221035; --plum2:#2e1647; --line:#4a2a6b;
     --pumpkin:#ff7a1a; --pumpkin2:#ffa24d; --candle:#ffd166; --slime:#b6ff5c;
-    --text:#f5ecff; --muted:#cbb6e6; --danger:#ff5d73; --violet:#b13cff; --magenta:#ff3ec8;
+    --text:#f5ecff; --muted:#cbb6e6; --danger:#ff5d73; --violet:#b13cff; --pink:#ff8ad8; --gold:#ffcf6b; --magenta:#ff3ec8;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{margin:0;background:var(--night);color:var(--text);font-family:Nunito,system-ui,sans-serif;line-height:1.5;overflow-x:hidden}
-  .sky{position:fixed;inset:0;z-index:-1;background:
+  .sky{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,#14081f55 0%,#14081fb3 45%,#14081fd9 100%),url(/background.jpg) 62% 30%/cover no-repeat,
       radial-gradient(1px 1px at 12% 18%,#fff8 50%,transparent 51%),
       radial-gradient(1px 1px at 72% 9%,#fff9 50%,transparent 51%),
       radial-gradient(1.5px 1.5px at 85% 32%,#fff7 50%,transparent 51%),
@@ -29,7 +29,7 @@
   .web{position:fixed;width:150px;height:150px;opacity:.35;pointer-events:none;z-index:0}
   .web.l{top:0;left:0}.web.r{top:0;right:0;transform:scaleX(-1)}
 
-  header{position:relative;text-align:center;padding:48px 16px 24px;max-width:760px;margin:0 auto}
+  header{position:relative;text-align:center;padding:20px 16px 12px;max-width:760px;margin:0 auto}
   .moon{width:120px;height:120px;border-radius:50%;margin:0 auto -38px;background:radial-gradient(circle at 35% 35%,#fff6d6,#ffd98a 55%,#e7a94a);box-shadow:0 0 60px #ffd16688,0 0 120px #ff7a1a44}
   .bat{position:absolute;width:46px;fill:#0b0412;animation:flap 5s ease-in-out infinite}
   .bat.b1{top:40px;left:12%;animation-delay:-1s}.bat.b2{top:95px;right:10%;width:34px;animation-delay:-2.5s}.bat.b3{top:20px;right:28%;width:26px}
@@ -45,8 +45,8 @@
   @keyframes bob{50%{transform:translateY(-8px)}}
 
   main{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 16px 64px}
-  .card{background:linear-gradient(180deg,var(--plum2),var(--plum));border:1px solid var(--line);border-radius:22px;padding:22px;margin:18px 0;box-shadow:0 10px 30px #0006}
-  .card h2{font-family:"Permanent Marker",cursive;font-weight:400;font-size:1.8rem;letter-spacing:.02em;color:var(--pumpkin);margin:0 0 6px}
+  .card{background:linear-gradient(180deg,#2e1647e6,#221035f0);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid #ffcf6b55;border-radius:22px;padding:22px;margin:18px 0;box-shadow:0 10px 30px #0006}
+  .card h2{font-family:"Permanent Marker",cursive;font-weight:400;font-size:1.8rem;letter-spacing:.02em;color:var(--pink);text-shadow:0 0 14px #ff6fd255;margin:0 0 6px}
   .info{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:10px}
   .info div{background:#14081f88;border-radius:14px;padding:12px 14px}
   .info b{display:block;color:var(--candle);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
@@ -88,8 +88,8 @@
   .full .left{color:var(--danger)}
 
   .captcha{margin-top:18px;min-height:78px}
-  .btn{display:block;width:100%;margin-top:18px;font:inherit;font-weight:900;font-size:1.15rem;letter-spacing:.02em;padding:16px;border:0;border-radius:999px;background:linear-gradient(180deg,var(--pumpkin2),var(--pumpkin));color:#1a0a00;cursor:pointer;box-shadow:0 6px 0 #8a3a00,0 0 30px #ff7a1a55}
-  .btn:active{transform:translateY(3px);box-shadow:0 3px 0 #8a3a00}
+  .btn{display:block;width:100%;margin-top:18px;font:inherit;font-weight:900;font-size:1.15rem;letter-spacing:.02em;padding:16px;border:0;border-radius:999px;background:linear-gradient(180deg,#ffb3e6,#ff6fd2 55%,#d94bb3);color:#2a0620;cursor:pointer;box-shadow:0 6px 0 #8a1f6a,0 0 30px #ff6fd255}
+  .btn:active{transform:translateY(3px);box-shadow:0 3px 0 #8a1f6a}
   .btn[disabled]{opacity:.6;cursor:wait}
   .err{color:var(--danger);font-weight:800;margin-top:12px;min-height:1.2em}
   .done{text-align:center}
@@ -102,26 +102,21 @@
   .ghost{position:absolute;font-size:34px;opacity:.85;animation:float 6s ease-in-out infinite}
   .ghost.g1{left:6%;top:150px}.ghost.g2{right:6%;top:175px;animation-delay:-3s}
   @keyframes float{50%{transform:translateY(-12px) rotate(4deg)}}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .banner{display:block;width:100%;max-width:640px;height:auto;margin:0 auto;mix-blend-mode:lighten}
+  header .sub{margin-top:12px;font-size:1.2rem;font-weight:900;color:var(--gold);text-shadow:0 2px 10px #000}
   footer{text-align:center;color:var(--muted);font-size:.85rem;padding-bottom:30px}
   @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
 <body>
 <div class="sky" aria-hidden="true"></div>
-<svg class="web l" viewBox="0 0 150 150" aria-hidden="true"><g fill="none" stroke="#e9d8ff" stroke-width="1"><path d="M0 0 150 40M0 0 120 120M0 0 40 150"/><path d="M0 30Q25 25 30 0M0 60Q50 50 60 0M0 95Q75 80 95 0M0 130Q100 110 130 0"/></g><path d="M78 0v70" stroke="#e9d8ff" stroke-width="1"/><circle cx="78" cy="74" r="6" fill="#0b0412" stroke="#e9d8ff"/></svg>
-<svg class="web r" viewBox="0 0 150 150" aria-hidden="true"><g fill="none" stroke="#e9d8ff" stroke-width="1"><path d="M0 0 150 40M0 0 120 120M0 0 40 150"/><path d="M0 30Q25 25 30 0M0 60Q50 50 60 0M0 95Q75 80 95 0M0 130Q100 110 130 0"/></g></svg>
 
 <header>
-  <svg class="bat b1" viewBox="0 0 64 32" aria-hidden="true"><path d="M32 10c2-4 4-6 4-6l1 5c3-1 6-2 10-1 6 1 12 6 17 12-6-2-10 0-12 4-2-4-6-5-10-3-3 2-5 6-5 9-2-2-3-3-5-3s-3 1-5 3c0-3-2-7-5-9-4-2-8-1-10 3-2-4-6-6-12-4 5-6 11-11 17-12 4-1 7 0 10 1l1-5s2 2 4 6z"/></svg>
-  <svg class="bat b2" viewBox="0 0 64 32" aria-hidden="true"><path d="M32 10c2-4 4-6 4-6l1 5c3-1 6-2 10-1 6 1 12 6 17 12-6-2-10 0-12 4-2-4-6-5-10-3-3 2-5 6-5 9-2-2-3-3-5-3s-3 1-5 3c0-3-2-7-5-9-4-2-8-1-10 3-2-4-6-6-12-4 5-6 11-11 17-12 4-1 7 0 10 1l1-5s2 2 4 6z"/></svg>
-  <svg class="bat b3" viewBox="0 0 64 32" aria-hidden="true"><path d="M32 10c2-4 4-6 4-6l1 5c3-1 6-2 10-1 6 1 12 6 17 12-6-2-10 0-12 4-2-4-6-5-10-3-3 2-5 6-5 9-2-2-3-3-5-3s-3 1-5 3c0-3-2-7-5-9-4-2-8-1-10 3-2-4-6-6-12-4 5-6 11-11 17-12 4-1 7 0 10 1l1-5s2 2 4 6z"/></svg>
-  <div class="moon" aria-hidden="true"></div>
-  <div class="eyebrow">You're invited</div>
-  <h1>Lauren Crayton's<br><span class="fifteen">15th</span> Halloween<br>Birthday Party</h1>
-  <p class="sub" style="margin-top:8px">Saturday, October 31 · 6:00 PM</p>
-  <div class="twin">Twin Costume Party 👯</div>
-  <span class="ghost g1" aria-hidden="true">👻</span><span class="ghost g2" aria-hidden="true">👻</span>
-  <div class="balloons" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+  <h1 class="sr">Lauren Crayton's 15th Halloween Birthday Party</h1>
+  <img class="banner" src="/banner.jpg" width="1200" height="800" alt="Happy 15th Birthday Lauren, with a tiara, balloons, gifts and pink and orange pumpkins">
+  <div class="twin">Halloween Twin Costume Party 👯</div>
+  <p class="sub">Saturday, October 31 · 6:00 PM</p>
 </header>
 
 <main>
