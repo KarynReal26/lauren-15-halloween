@@ -7,12 +7,12 @@
 <meta name="description" content="RSVP for Lauren Crayton's 15th Halloween Birthday Party">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎃</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Permanent+Marker&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root{
     --night:#14081f; --plum:#221035; --plum2:#2e1647; --line:#4a2a6b;
     --pumpkin:#ff7a1a; --pumpkin2:#ffa24d; --candle:#ffd166; --slime:#b6ff5c;
-    --text:#f5ecff; --muted:#cbb6e6; --danger:#ff5d73;
+    --text:#f5ecff; --muted:#cbb6e6; --danger:#ff5d73; --violet:#b13cff; --magenta:#ff3ec8;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -46,7 +46,7 @@
 
   main{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 16px 64px}
   .card{background:linear-gradient(180deg,var(--plum2),var(--plum));border:1px solid var(--line);border-radius:22px;padding:22px;margin:18px 0;box-shadow:0 10px 30px #0006}
-  .card h2{font-family:Creepster,cursive;font-weight:400;font-size:1.9rem;letter-spacing:.03em;color:var(--pumpkin);margin:0 0 6px}
+  .card h2{font-family:"Permanent Marker",cursive;font-weight:400;font-size:1.8rem;letter-spacing:.02em;color:var(--pumpkin);margin:0 0 6px}
   .info{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:10px}
   .info div{background:#14081f88;border-radius:14px;padding:12px 14px}
   .info b{display:block;color:var(--candle);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
@@ -95,6 +95,13 @@
   .done{text-align:center}
   .done .big{font-size:4rem;line-height:1}
   .hp{position:absolute;left:-9999px}
+  .twin{display:inline-block;position:relative;font-family:"Permanent Marker",cursive;font-size:clamp(1.4rem,5.5vw,2rem);color:#fff;background:var(--violet);padding:4px 18px 6px;border-radius:14px;transform:rotate(-2deg);margin-top:10px;box-shadow:0 0 24px #b13cff88}
+  .flyer{display:block;width:100%;max-width:520px;margin:0 auto;border-radius:18px;border:3px solid var(--violet);box-shadow:0 0 40px #b13cff55}
+  .fun{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0;padding:0;list-style:none}
+  .fun li{background:#14081f;border:2px solid var(--line);border-radius:999px;padding:6px 12px;font-weight:800}
+  .ghost{position:absolute;font-size:34px;opacity:.85;animation:float 6s ease-in-out infinite}
+  .ghost.g1{left:6%;top:150px}.ghost.g2{right:6%;top:175px;animation-delay:-3s}
+  @keyframes float{50%{transform:translateY(-12px) rotate(4deg)}}
   footer{text-align:center;color:var(--muted);font-size:.85rem;padding-bottom:30px}
   @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
@@ -111,7 +118,9 @@
   <div class="moon" aria-hidden="true"></div>
   <div class="eyebrow">You're invited</div>
   <h1>Lauren Crayton's<br><span class="fifteen">15th</span> Halloween<br>Birthday Party</h1>
-  <p class="sub">Costumes, candy &amp; a spooky good time 🎃</p>
+  <p class="sub" style="margin-top:8px">Saturday, October 31 · 6:00 PM</p>
+  <div class="twin">Twin Costume Party 👯</div>
+  <span class="ghost g1" aria-hidden="true">👻</span><span class="ghost g2" aria-hidden="true">👻</span>
   <div class="balloons" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
 </header>
 
@@ -119,12 +128,15 @@
   <section class="card">
     <h2>The Details</h2>
     <div class="info">
-      <div><b>When</b><span id="when">Date &amp; time coming soon</span></div>
+      <div><b>When</b><span id="when">Saturday, Oct 31, 2026<br>6:00 PM</span></div>
       <div><b>Where</b>A private home. The address is sent once you confirm your registration.</div>
       <div><b>Food</b>Potluck! Each adult brings one item from the list below.</div>
     </div>
-    <div class="note">🧛 <span>Adults are encouraged to wear a costume too!</span></div>
+    <div class="note">👯 <span>Come as a twin! Match with a friend, sibling, partner or group. Adults are encouraged to dress up too!</span></div>
+    <ul class="fun"><li>🎮 Games</li><li>🍕 Food</li><li>🍬 Trick or treat</li><li>🎵 Music</li><li>🏆 Prizes</li><li>⭐ And more!</li></ul>
   </section>
+
+  <section class="card" style="padding:14px"><img class="flyer" src="/flyer.jpg" width="900" height="1349" alt="Halloween Twin Costume Party flyer: Saturday Oct 31, 2026, 6:00 PM, private home, RSVP for address" loading="lazy"></section>
 
   <section class="card" id="signup">
     <h2>Sign Up</h2>
