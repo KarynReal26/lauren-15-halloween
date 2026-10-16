@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lauren's 15th Halloween Birthday Party</title>
+<meta name="description" content="RSVP for Lauren Crayton's 15th Halloween Birthday Party">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎃</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#14081f; --plum:#221035; --plum2:#2e1647; --line:#4a2a6b;
+    --pumpkin:#ff7a1a; --pumpkin2:#ffa24d; --candle:#ffd166; --slime:#b6ff5c;
+    --text:#f5ecff; --muted:#cbb6e6; --danger:#ff5d73;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--night);color:var(--text);font-family:Nunito,system-ui,sans-serif;line-height:1.5;overflow-x:hidden}
+  .sky{position:fixed;inset:0;z-index:-1;background:
+      radial-gradient(1px 1px at 12% 18%,#fff8 50%,transparent 51%),
+      radial-gradient(1px 1px at 72% 9%,#fff9 50%,transparent 51%),
+      radial-gradient(1.5px 1.5px at 85% 32%,#fff7 50%,transparent 51%),
+      radial-gradient(1px 1px at 33% 41%,#fff6 50%,transparent 51%),
+      radial-gradient(1.5px 1.5px at 55% 22%,#fff8 50%,transparent 51%),
+      radial-gradient(1px 1px at 8% 62%,#fff5 50%,transparent 51%),
+      radial-gradient(1px 1px at 92% 70%,#fff6 50%,transparent 51%),
+      radial-gradient(ellipse at 50% -10%,#4b1d78 0%,#14081f 65%)}
+  .web{position:fixed;width:150px;height:150px;opacity:.35;pointer-events:none;z-index:0}
+  .web.l{top:0;left:0}.web.r{top:0;right:0;transform:scaleX(-1)}
+
+  header{position:relative;text-align:center;padding:48px 16px 24px;max-width:760px;margin:0 auto}
+  .moon{width:120px;height:120px;border-radius:50%;margin:0 auto -38px;background:radial-gradient(circle at 35% 35%,#fff6d6,#ffd98a 55%,#e7a94a);box-shadow:0 0 60px #ffd16688,0 0 120px #ff7a1a44}
+  .bat{position:absolute;width:46px;fill:#0b0412;animation:flap 5s ease-in-out infinite}
+  .bat.b1{top:40px;left:12%;animation-delay:-1s}.bat.b2{top:95px;right:10%;width:34px;animation-delay:-2.5s}.bat.b3{top:20px;right:28%;width:26px}
+  @keyframes flap{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-14px) rotate(5deg)}}
+  .eyebrow{position:relative;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--pumpkin2);font-size:.85rem;margin-top:8px}
+  h1{position:relative;font-family:Creepster,cursive;font-weight:400;font-size:clamp(2.6rem,10vw,4.6rem);line-height:.95;margin:.25em 0 .1em;color:var(--pumpkin);text-shadow:0 0 18px #ff7a1a88,0 4px 0 #6b2a00}
+  h1 .fifteen{display:inline-block;color:var(--candle);font-size:1.25em;transform:rotate(-6deg);text-shadow:0 0 22px #ffd16699,0 4px 0 #7a4a00}
+  .sub{position:relative;font-size:1.15rem;font-weight:700;margin:0}
+  .balloons{display:flex;justify-content:center;gap:10px;margin:18px 0 0}
+  .balloons span{width:22px;height:28px;border-radius:50% 50% 48% 48%;display:block;position:relative;animation:bob 4s ease-in-out infinite}
+  .balloons span::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:26px;background:#ffffff55}
+  .balloons span:nth-child(1){background:var(--pumpkin)}.balloons span:nth-child(2){background:#8d4bd6;animation-delay:-1s}.balloons span:nth-child(3){background:var(--slime);animation-delay:-2s}.balloons span:nth-child(4){background:var(--candle);animation-delay:-3s}.balloons span:nth-child(5){background:#8d4bd6;animation-delay:-.5s}
+  @keyframes bob{50%{transform:translateY(-8px)}}
+
+  main{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 16px 64px}
+  .card{background:linear-gradient(180deg,var(--plum2),var(--plum));border:1px solid var(--line);border-radius:22px;padding:22px;margin:18px 0;box-shadow:0 10px 30px #0006}
+  .card h2{font-family:Creepster,cursive;font-weight:400;font-size:1.9rem;letter-spacing:.03em;color:var(--pumpkin);margin:0 0 6px}
+  .info{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:10px}
+  .info div{background:#14081f88;border-radius:14px;padding:12px 14px}
+  .info b{display:block;color:var(--candle);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
+  .note{display:flex;gap:10px;align-items:flex-start;background:#ff7a1a1a;border:1px dashed var(--pumpkin);border-radius:14px;padding:12px 14px;margin-top:12px;font-weight:600}
+
+  label{display:block;font-weight:800;margin:14px 0 6px;font-size:.95rem}
+  .req{color:var(--pumpkin2)}
+  input,select{width:100%;font:inherit;color:var(--text);background:#14081f;border:2px solid var(--line);border-radius:12px;padding:12px 14px;outline:none;transition:border-color .15s,box-shadow .15s}
+  input:focus,select:focus{border-color:var(--pumpkin);box-shadow:0 0 0 4px #ff7a1a33}
+  select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--pumpkin) 50%),linear-gradient(135deg,var(--pumpkin) 50%,transparent 50%);background-position:calc(100% - 20px) 52%,calc(100% - 14px) 52%;background-size:6px 6px;background-repeat:no-repeat;padding-right:40px}
+  option:disabled{color:#776}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+  @media (max-width:520px){.row2{grid-template-columns:1fr}}
+  .orgs{display:flex;flex-wrap:wrap;gap:8px}
+  .orgs label{margin:0;font-weight:700}
+  .orgs input{position:absolute;opacity:0;width:1px;height:1px}
+  .orgs span{display:inline-block;padding:9px 14px;border-radius:999px;border:2px solid var(--line);background:#14081f;cursor:pointer;transition:.15s}
+  .orgs input:checked+span{background:var(--pumpkin);border-color:var(--pumpkin);color:#1a0a00}
+  .orgs input:focus-visible+span{box-shadow:0 0 0 4px #ff7a1a55}
+
+  .stepper{display:flex;align-items:center;gap:10px;max-width:220px}
+  .stepper button{flex:none;width:48px;height:48px;border-radius:12px;border:2px solid var(--line);background:#14081f;color:var(--pumpkin);font-size:1.6rem;font-weight:900;cursor:pointer}
+  .stepper input{text-align:center;font-size:1.3rem;font-weight:900}
+
+  .person{position:relative;border:2px solid var(--line);border-radius:18px;padding:16px;margin-top:14px;background:#14081f66}
+  .person h3{margin:0;display:flex;align-items:center;gap:8px;font-size:1.05rem}
+  .tag{font-size:.75rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:999px;background:var(--line)}
+  .seg{display:inline-flex;border:2px solid var(--line);border-radius:999px;overflow:hidden;margin-top:10px}
+  .seg button{font:inherit;font-weight:800;border:0;background:transparent;color:var(--muted);padding:8px 18px;cursor:pointer}
+  .seg button[aria-pressed=true]{background:var(--pumpkin);color:#1a0a00}
+  .bring{margin-top:4px;border-top:1px dashed var(--line);padding-top:4px}
+  .hint{font-size:.85rem;color:var(--muted);margin:6px 0 0;font-weight:600}
+
+  .potluck{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
+  .potluck li{display:grid;grid-template-columns:1fr auto;gap:4px 10px;align-items:center;background:#14081f88;border-radius:12px;padding:10px 12px;font-weight:700}
+  .meter{grid-column:1/-1;height:6px;border-radius:99px;background:#ffffff14;overflow:hidden}
+  .meter i{display:block;height:100%;background:linear-gradient(90deg,var(--slime),var(--candle))}
+  .left{font-size:.85rem;color:var(--candle);white-space:nowrap}
+  .full .left{color:var(--danger)}
+
+  .captcha{margin-top:18px;min-height:78px}
+  .btn{display:block;width:100%;margin-top:18px;font:inherit;font-weight:900;font-size:1.15rem;letter-spacing:.02em;padding:16px;border:0;border-radius:999px;background:linear-gradient(180deg,var(--pumpkin2),var(--pumpkin));color:#1a0a00;cursor:pointer;box-shadow:0 6px 0 #8a3a00,0 0 30px #ff7a1a55}
+  .btn:active{transform:translateY(3px);box-shadow:0 3px 0 #8a3a00}
+  .btn[disabled]{opacity:.6;cursor:wait}
+  .err{color:var(--danger);font-weight:800;margin-top:12px;min-height:1.2em}
+  .done{text-align:center}
+  .done .big{font-size:4rem;line-height:1}
+  .hp{position:absolute;left:-9999px}
+  footer{text-align:center;color:var(--muted);font-size:.85rem;padding-bottom:30px}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="sky" aria-hidden="true"></div>
+<svg class="web l" viewBox="0 0 150 150" aria-hidden="true"><g fill="none" stroke="#e9d8ff" stroke-width="1"><path d="M0 0 150 40M0 0 120 120M0 0 40 150"/><path d="M0 30Q25 25 30 0M0 60Q50 50 60 0M0 95Q75 80 95 0M0 130Q100 110 130 0"/></g><path d="M78 0v70" stroke="#e9d8ff" stroke-width="1"/><circle cx="78" cy="74" r="6" fill="#0b0412" stroke="#e9d8ff"/></svg>
+<svg class="web r" viewBox="0 0 150 150" aria-hidden="true"><g fill="none" stroke="#e9d8ff" stroke-width="1"><path d="M0 0 150 40M0 0 120 120M0 0 40 150"/><path d="M0 30Q25 25 30 0M0 60Q50 50 60 0M0 95Q75 80 95 0M0 130Q100 110 130 0"/></g></svg>
+
+<header>
+  <svg class="bat b1" viewBox="0 0 64 32" aria-hidden="true"><path d="M32 10c2-4 4-6 4-6l1 5c3-1 6-2 10-1 6 1 12 6 17 12-6-2-10 0-12 4-2-4-6-5-10-3-3 2-5 6-5 9-2-2-3-3-5-3s-3 1-5 3c0-3-2-7-5-9-4-2-8-1-10 3-2-4-6-6-12-4 5-6 11-11 17-12 4-1 7 0 10 1l1-5s2 2 4 6z"/></svg>
+  <svg class="bat b2" viewBox="0 0 64 32" aria-hidden="true"><path d="M32 10c2-4 4-6 4-6l1 5c3-1 6-2 10-1 6 1 12 6 17 12-6-2-10 0-12 4-2-4-6-5-10-3-3 2-5 6-5 9-2-2-3-3-5-3s-3 1-5 3c0-3-2-7-5-9-4-2-8-1-10 3-2-4-6-6-12-4 5-6 11-11 17-12 4-1 7 0 10 1l1-5s2 2 4 6z"/></svg>
+  <svg class="bat b3" viewBox="0 0 64 32" aria-hidden="true"><path d="M32 10c2-4 4-6 4-6l1 5c3-1 6-2 10-1 6 1 12 6 17 12-6-2-10 0-12 4-2-4-6-5-10-3-3 2-5 6-5 9-2-2-3-3-5-3s-3 1-5 3c0-3-2-7-5-9-4-2-8-1-10 3-2-4-6-6-12-4 5-6 11-11 17-12 4-1 7 0 10 1l1-5s2 2 4 6z"/></svg>
+  <div class="moon" aria-hidden="true"></div>
+  <div class="eyebrow">You're invited</div>
+  <h1>Lauren Crayton's<br><span class="fifteen">15th</span> Halloween<br>Birthday Party</h1>
+  <p class="sub">Costumes, candy &amp; a spooky good time 🎃</p>
+  <div class="balloons" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+</header>
+
+<main>
+  <section class="card">
+    <h2>The Details</h2>
+    <div class="info">
+      <div><b>When</b><span id="when">Date &amp; time coming soon</span></div>
+      <div><b>Where</b>A private home. The address is sent once you confirm your registration.</div>
+      <div><b>Food</b>Potluck! Each adult brings one item from the list below.</div>
+    </div>
+    <div class="note">🧛 <span>Adults are encouraged to wear a costume too!</span></div>
+  </section>
+
+  <section class="card" id="signup">
+    <h2>Sign Up</h2>
+    <p class="hint" style="margin-top:0">After you submit, we'll email a confirmation link. Your registration is complete once you click it.</p>
+
+    <form name="party-signup" method="POST" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" id="form" novalidate>
+      <input type="hidden" name="form-name" value="party-signup">
+      <p class="hp"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <input type="hidden" name="subject" value="New RSVP for Lauren's 15th Halloween Party">
+
+      <label for="name">Your name <span class="req">*</span></label>
+      <input id="name" name="name" autocomplete="name" required>
+
+      <label>Organization <span class="req">*</span></label>
+      <div class="orgs" role="radiogroup">
+        <label><input type="radio" name="organization" value="NSBE" required><span>NSBE</span></label>
+        <label><input type="radio" name="organization" value="Top Teens"><span>Top Teens</span></label>
+        <label><input type="radio" name="organization" value="NAACP"><span>NAACP</span></label>
+        <label><input type="radio" name="organization" value="Slate Candidate"><span>Slate Candidate</span></label>
+        <label><input type="radio" name="organization" value="Family Friend"><span>Family Friend</span></label>
+      </div>
+
+      <label for="headcount">How many people are coming (including you)? <span class="req">*</span></label>
+      <div class="stepper">
+        <button type="button" id="minus" aria-label="Fewer people">−</button>
+        <input id="headcount" name="headcount" type="number" inputmode="numeric" min="1" max="15" value="1">
+        <button type="button" id="plus" aria-label="More people">+</button>
+      </div>
+
+      <div id="people"></div>
+
+      <input type="hidden" name="email" id="contactEmail">
+      <input type="hidden" name="phone" id="contactPhone">
+      <input type="hidden" name="attendees" id="attendeesText">
+      <input type="hidden" name="potluck" id="potluckText">
+      <input type="hidden" name="attendees_json" id="attendeesJson">
+
+      <div class="captcha" data-netlify-recaptcha="true"></div>
+      <p class="err" id="err" role="alert"></p>
+      <button class="btn" type="submit" id="submit">Count me in! 🎃</button>
+    </form>
+
+    <div id="done" class="done" hidden>
+      <div class="big">📬</div>
+      <h2>Check your email!</h2>
+      <p>We sent a confirmation link to <b id="doneEmail"></b>. Click it within 48 hours to finish registering and get the party address.</p>
+      <p class="hint">Don't see it? Check your spam or promotions folder.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Potluck Board</h2>
+    <p class="hint" style="margin-top:0">Spots fill up as adults sign up.</p>
+    <ul class="potluck" id="board"><li>Loading…</li></ul>
+  </section>
+</main>
+<footer>Happy 15th, Lauren! 🦇</footer>
+
+<script>
+(() => {
+  let items = [];
+  const people = [];
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+  async function loadSlots() {
+    try {
+      const r = await fetch("/api/slots", { cache: "no-store" });
+      items = (await r.json()).items;
+    } catch { items = []; }
+    renderBoard(); renderPeople();
+  }
+
+  function renderBoard() {
+    if (!items.length) { $("board").innerHTML = "<li>Couldn't load the list. Refresh to try again.</li>"; return; }
+    $("board").innerHTML = items.map(i => {
+      const taken = i.total - i.left;
+      return `<li class="${i.left ? "" : "full"}"><span>${esc(i.label)}</span><span class="left">${i.left ? `${i.left} of ${i.total} left` : "All taken"}</span><span class="meter"><i style="width:${(taken / i.total) * 100}%"></i></span></li>`;
+    }).join("");
+  }
+
+  function setCount(n) {
+    n = Math.max(1, Math.min(15, n | 0 || 1));
+    $("headcount").value = n;
+    while (people.length < n) people.push({ type: people.length === 0 ? "Adult" : "Adult", name: "", email: "", phone: "", bring: "" });
+    people.length = n;
+    renderPeople();
+  }
+
+  function leftFor(id, exceptIdx) {
+    const it = items.find(i => i.id === id);
+    if (!it) return 0;
+    const usedInGroup = people.filter((p, i) => i !== exceptIdx && p.type === "Adult" && p.bring === id).length;
+    return it.left - usedInGroup;
+  }
+
+  function renderPeople() {
+    if (!people.length) return;
+    if (!people[0].name) people[0].name = $("name").value;
+    $("people").innerHTML = people.map((p, i) => {
+      const first = i === 0;
+      const opts = items.map(it => {
+        const left = leftFor(it.id, i);
+        const dis = left <= 0 && p.bring !== it.id;
+        return `<option value="${it.id}" ${p.bring === it.id ? "selected" : ""} ${dis ? "disabled" : ""}>${esc(it.label)}${dis ? " (full)" : ` (${left} left)`}</option>`;
+      }).join("");
+      return `<div class="person" data-i="${i}">
+        <h3><span class="tag">Guest ${i + 1}</span>${first ? "That's you" : ""}</h3>
+        <div class="seg" role="group" aria-label="Adult or kid">
+          <button type="button" data-type="Adult" aria-pressed="${p.type === "Adult"}">Adult</button>
+          <button type="button" data-type="Kid" aria-pressed="${p.type === "Kid"}">Kid</button>
+        </div>
+        <label>Name <span class="req">*</span></label>
+        <input data-f="name" value="${esc(p.name)}" autocomplete="${first ? "name" : "off"}">
+        <div class="row2">
+          <div><label>Email ${first ? '<span class="req">*</span>' : ""}</label><input data-f="email" type="email" inputmode="email" value="${esc(p.email)}" autocomplete="${first ? "email" : "off"}"></div>
+          <div><label>Phone ${first ? '<span class="req">*</span>' : ""}</label><input data-f="phone" type="tel" inputmode="tel" value="${esc(p.phone)}" autocomplete="${first ? "tel" : "off"}"></div>
+        </div>
+        ${first ? '<p class="hint">Your confirmation link goes to this email.</p>' : '<p class="hint">Email and phone are optional for extra guests.</p>'}
+        ${p.type === "Adult" ? `<div class="bring"><label>What will you bring? <span class="req">*</span></label>
+          <select data-f="bring"><option value="">Choose a potluck item…</option>${opts}</select></div>` : ""}
+      </div>`;
+    }).join("");
+  }
+
+  $("people").addEventListener("input", e => {
+    const box = e.target.closest(".person"); if (!box || !e.target.dataset.f) return;
+    const p = people[+box.dataset.i]; p[e.target.dataset.f] = e.target.value;
+    if (e.target.dataset.f === "bring") renderPeople();
+  });
+  $("people").addEventListener("click", e => {
+    const b = e.target.closest("[data-type]"); if (!b) return;
+    const p = people[+b.closest(".person").dataset.i];
+    p.type = b.dataset.type; if (p.type === "Kid") p.bring = "";
+    renderPeople();
+  });
+  $("name").addEventListener("input", e => {
+    const inp = document.querySelector('.person[data-i="0"] [data-f=name]');
+    if (!people[0].name || people[0]._auto) { people[0].name = e.target.value; people[0]._auto = true; if (inp) inp.value = e.target.value; }
+  });
+  $("minus").onclick = () => setCount(+$("headcount").value - 1);
+  $("plus").onclick = () => setCount(+$("headcount").value + 1);
+  $("headcount").addEventListener("change", e => setCount(+e.target.value));
+
+  const emailOk = s => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
+
+  $("form").addEventListener("submit", async e => {
+    e.preventDefault();
+    const err = $("err"); err.textContent = "";
+    const f = e.target;
+    if (!$("name").value.trim()) return err.textContent = "Please enter your name.";
+    if (!f.querySelector("[name=organization]:checked")) return err.textContent = "Please choose your organization.";
+    for (const [i, p] of people.entries()) {
+      if (!p.name.trim()) return err.textContent = `Please enter a name for Guest ${i + 1}.`;
+      if (i === 0 && !emailOk(p.email)) return err.textContent = "Please enter a valid email for yourself (Guest 1).";
+      if (i === 0 && p.phone.replace(/\D/g, "").length < 10) return err.textContent = "Please enter your phone number (Guest 1).";
+      if (p.email && !emailOk(p.email)) return err.textContent = `Guest ${i + 1}'s email doesn't look right.`;
+      if (p.type === "Adult" && !p.bring) return err.textContent = `Please choose what Guest ${i + 1} will bring.`;
+      if (p.type === "Adult" && leftFor(p.bring, i) <= 0) return err.textContent = `Sorry, Guest ${i + 1}'s potluck item just filled up. Please pick another.`;
+    }
+    const cap = f.querySelector("[name=g-recaptcha-response]");
+    if (cap && !cap.value) return err.textContent = "Please check the \"I'm not a robot\" box.";
+
+    const clean = people.map(({ type, name, email, phone, bring }) => ({ type, name: name.trim(), email: email.trim(), phone: phone.trim(), bring: type === "Adult" ? bring : "" }));
+    const label = id => (items.find(i => i.id === id) || {}).label || "";
+    $("contactEmail").value = clean[0].email;
+    $("contactPhone").value = clean[0].phone;
+    $("attendeesJson").value = JSON.stringify(clean);
+    $("attendeesText").value = clean.map((p, i) => `${i + 1}. ${p.name} (${p.type}) ${p.email} ${p.phone}`.trim()).join("\n");
+    $("potluckText").value = clean.filter(p => p.bring).map(p => `${p.name}: ${label(p.bring)}`).join("\n") || "None (kids only)";
+
+    const btn = $("submit"); btn.disabled = true; btn.textContent = "Sending…";
+    try {
+      const res = await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(f)).toString() });
+      if (!res.ok) throw new Error(res.status);
+      f.hidden = true; $("doneEmail").textContent = clean[0].email; $("done").hidden = false;
+      $("signup").scrollIntoView();
+      setTimeout(loadSlots, 4000);
+    } catch {
+      err.textContent = "Something went wrong sending your sign-up. Please check the captcha and try again.";
+      if (window.grecaptcha) try { grecaptcha.reset(); } catch {}
+    } finally { btn.disabled = false; btn.textContent = "Count me in! 🎃"; }
+  });
+
+  setCount(1);
+  loadSlots();
+})();
+</script>
+</body>
+</html>
