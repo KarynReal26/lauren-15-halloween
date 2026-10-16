@@ -32,23 +32,19 @@ export async function countClaims(store) {
 }
 
 export async function sendEmail({ to, subject, html }) {
-  const key = process.env.BREVO_API_KEY;
+  const key = process.env.RESEND_API_KEY;
   const from = process.env.SENDER_EMAIL;
   if (!key || !from) {
-    console.log("Email not sent (BREVO_API_KEY / SENDER_EMAIL not set):", to, subject);
+    console.log("Email not sent (RESEND_API_KEY / SENDER_EMAIL not set):", to, subject);
     return false;
   }
-  const res = await fetch("https://api.brevo.com/v3/smtp/email", {
+  const name = process.env.SENDER_NAME || "Lauren's 15th Halloween Party";
+  const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
-    headers: { "api-key": key, "content-type": "application/json", accept: "application/json" },
-    body: JSON.stringify({
-      sender: { email: from, name: process.env.SENDER_NAME || "Lauren's 15th Halloween Party" },
-      to: [{ email: to }],
-      subject,
-      htmlContent: html,
-    }),
+    headers: { authorization: `Bearer ${key}`, "content-type": "application/json" },
+    body: JSON.stringify({ from: `${name} <${from}>`, to: [to], subject, html }),
   });
-  if (!res.ok) console.log("Brevo error", res.status, await res.text());
+  if (!res.ok) console.log("Resend error", res.status, await res.text());
   return res.ok;
 }
 
